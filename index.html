@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#0f1512" />
+  <link rel="icon" href="./icon.svg" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Garten 3D" />
+  <title>Garten 3D-Planer</title>
+  <script type="module" crossorigin src="./assets/index-obVsHNc_.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D0vG7Dgs.css">
+<link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <button id="btn-projekte" class="ghost" title="Projekte">☰</button>
+      <input id="kunde" class="kunde" spellcheck="false" />
+      <div class="spacer"></div>
+      <label class="rasterwahl" title="Raster: alles rastet auf diese Schrittweite ein">▦ <select id="raster"></select></label>
+      <button id="btn-kollision" class="ghost" title="Überschneidungen verhindern (an/aus). Mit Umschalt-Taste beim Ziehen kurz ignorieren.">⛨</button>
+      <button id="btn-undo" class="ghost" title="Rückgängig (Strg+Z)">↶</button>
+      <div class="seg" id="view-toggle">
+        <button data-view="2d">2D Plan</button>
+        <button data-view="3d" class="on">3D</button>
+      </div>
+    </header>
+
+    <nav id="rail"></nav>
+    <aside id="panel"></aside>
+
+    <main id="stage">
+      <div id="view3d"></div>
+      <canvas id="view2d" hidden></canvas>
+      <div id="hint" hidden></div>
+      <div id="toolbar" hidden>
+        <span id="toolbar-text"></span>
+        <div class="seg" id="tool-formen"></div>
+        <span id="toolbar-tipp"></span>
+        <button id="tool-cancel" class="ghost" title="Werkzeug beenden (Esc)">✕</button>
+      </div>
+      <button id="btn-exit-present" hidden>Präsentation beenden</button>
+    </main>
+  </div>
+
+  <dialog id="dlg-projekte"></dialog>
+  <input type="file" id="file-import" accept=".json,application/json" hidden />
+</body>
+</html>
